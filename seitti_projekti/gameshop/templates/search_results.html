@@ -1,0 +1,10 @@
+<table id="result_table">
+  {% for game in results %}
+    <tr class="search_result_row">
+      <td> {{ game.name }} </td>
+      <td> {{ game.price }} </td>
+      <td> <a class="navigation_button" href="{% url "confirmPayment" game.pk %}">Osta</a> </td>
+      <td> <a class="navigation_button" href="{% url "game" game.pk %}">Tiedot</a></td>
+    </tr>
+  {% endfor %}
+</table>

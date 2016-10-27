@@ -1,0 +1,24 @@
+{% extends "player_base.html" %}
+{% load staticfiles %}
+
+{% block head_elements %}
+{{ block.super }}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+{% endblock %}
+
+{% block header %}
+<div class="header">
+        <h1>{{ user.get_username}}:n omat tiedot</h1>
+    </div>
+{% endblock %}
+
+{% block navigation_bar %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h3>Sinun profiilisi</h3>
+<a class="navigation_button" href="{% url 'playerModifyInfo' %}">Muuta tilin tietoja</a>
+<a class="navigation_button" href="{% url 'changePassword' %}">Muuta salasanaa</a>
+
+{% endblock %}

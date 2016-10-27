@@ -1,0 +1,56 @@
+{% extends "player_base.html" %}
+{% load staticfiles %}
+
+{% block head_elements %}
+{{ block.super }}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="{% static 'js/search.js' %}"></script>
+{% endblock %}
+
+{% block header %}
+<div class="header">
+  <h1>Hae pelejä</h1>
+</div>
+{% endblock %}
+
+{% block navigation_bar %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+<form id="search_form" action="" method="post">
+  {% csrf_token %}
+  <div id="search_options">
+    <label for="{{ form.gameName.id_for_label }}">Pelin nimi: </label>
+    {{ form.gameName }}
+    <label for="{{ form.developerName.id_for_label }}">Kehittäjä: </label>
+    {{ form.developerName }}
+  </div>
+
+  <div id="extra_search_options">
+    <div>
+      <label for="{{ form.maxPrice.id_for_label }}">Hinta korkeintaan: </label>
+      {{ form.maxPrice }}
+      <label for="{{ form.minPrice.id_for_label }}">Hinta vähintään: </label>
+      {{ form.minPrice }}
+    </div>
+
+    <div>
+      {{ form.categories }}
+    </div>
+  </div>
+  <div class="search_buttons">
+    <input id="button" type="submit" name="toggle_search_options" value="Lisää hakuehtoja">
+
+    <input id="button" type="submit" name="search_submit" value="Hae">
+  </div>
+
+</form>
+
+<div class="col-9">
+  <p id="search_results">
+
+  </p>
+</div>
+
+{% endblock %}

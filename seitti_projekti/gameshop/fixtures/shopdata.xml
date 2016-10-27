@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+    <!-- Kehittäjän salasana: dev1 -->
+  <object model="auth.user" pk="1">
+      <field type="CharField" name="password">pbkdf2_sha256$20000$2MFiGZUA4eo5$S4UieY3jCxMoKwdlbAlQQ5hfNyKL/WvoVQgssQNuPqQ=</field>
+      <field type="DateTimeField" name="last_login"><None></None></field>
+      <field type="BooleanField" name="is_superuser">False</field>
+      <field type="CharField" name="username">devaaja</field>
+      <field type="CharField" name="first_name">Debbie</field>
+      <field type="CharField" name="last_name">Mutha</field>
+      <field type="CharField" name="email">dev@devaaja.com</field>
+      <field type="BooleanField" name="is_staff">False</field>
+      <field type="BooleanField" name="is_active">True</field>
+      <field type="DateTimeField" name="date_joined">2016-03-18T10:01:59.554273+00:00</field>
+      <field rel="ManyToManyRel" to="auth.group" name="groups"></field>
+      <field rel="ManyToManyRel" to="auth.permission" name="user_permissions"></field>
+  </object>
+  <!-- Pelaajan salasana: pel1 -->
+  <object model="auth.user" pk="2">
+      <field type="CharField" name="password">pbkdf2_sha256$20000$ZULNSGny47oU$goPrdz+zVhFazasW8Nk5qm+ETTpCaKZXd5rV/myyKtU=</field>
+      <field type="DateTimeField" name="last_login"><None></None></field>
+      <field type="BooleanField" name="is_superuser">False</field>
+      <field type="CharField" name="username">pelaaja</field>
+      <field type="CharField" name="first_name">Pekko</field>
+      <field type="CharField" name="last_name">Paa</field>
+      <field type="CharField" name="email">pelaaja@example.com</field>
+      <field type="BooleanField" name="is_staff">False</field>
+      <field type="BooleanField" name="is_active">True</field>
+      <field type="DateTimeField" name="date_joined">2016-03-18T10:03:02.321493+00:00</field>
+      <field rel="ManyToManyRel" to="auth.group" name="groups"></field>
+      <field rel="ManyToManyRel" to="auth.permission" name="user_permissions"></field>
+  </object>
+  <object model="auth.user" pk="57">
+    <field type="CharField" name="password">pbkdf2_sha256$20000$UYXy60lIgwLg$SaOM7afEKh1Tz1ebCWkwYsKJDz7uffWzC40hcr4OUyg=</field>
+    <field type="DateTimeField" name="last_login">2016-05-06T13:23:10.037695+00:00</field>
+    <field type="BooleanField" name="is_superuser">True</field>
+    <field type="CharField" name="username">super</field>
+    <field type="CharField" name="first_name"></field>
+    <field type="CharField" name="last_name"></field>
+    <field type="CharField" name="email"></field>
+    <field type="BooleanField" name="is_staff">True</field>
+    <field type="BooleanField" name="is_active">True</field>
+    <field type="DateTimeField" name="date_joined">2016-05-06T13:22:55.140535+00:00</field>
+    <field to="auth.group" rel="ManyToManyRel" name="groups"></field>
+    <field to="auth.permission" rel="ManyToManyRel" name="user_permissions"></field>
+  </object>
+  <!-- salasana: pp -->
+  <object model="auth.user" pk="58">
+    <field type="CharField" name="password">pbkdf2_sha256$20000$LQwVY7Q8QH5P$8ihpyjGgxrw9u6t3Qh08JiplWeqBLX5zZI3fzBLDZW4=</field>
+    <field type="DateTimeField" name="last_login">2016-05-06T17:11:20.242984+00:00</field>
+    <field type="BooleanField" name="is_superuser">False</field>
+    <field type="CharField" name="username">pp</field>
+    <field type="CharField" name="first_name">Pirkko</field>
+    <field type="CharField" name="last_name">Pelaaja</field>
+    <field type="CharField" name="email">pirkko@pelaaja.pp</field>
+    <field type="BooleanField" name="is_staff">False</field>
+    <field type="BooleanField" name="is_active">True</field>
+    <field type="DateTimeField" name="date_joined">2016-05-06T17:10:36.896227+00:00</field>
+    <field to="auth.group" rel="ManyToManyRel" name="groups"></field>
+    <field to="auth.permission" rel="ManyToManyRel" name="user_permissions"></field>
+  </object>
+  <!-- salasana: testi -->
+  <object model="auth.user" pk="59">
+    <field type="CharField" name="password">pbkdf2_sha256$20000$XBnjCIWzTZti$TEYgsl3uWJwqU6atwrabmu80+rDpKGAlhO1pC9axvmA=</field>
+    <field type="DateTimeField" name="last_login">2016-05-06T17:12:59.449464+00:00</field>
+    <field type="BooleanField" name="is_superuser">False</field>
+    <field type="CharField" name="username">kapu</field>
+    <field type="CharField" name="first_name">Kapteeni</field>
+    <field type="CharField" name="last_name">Punaparta</field>
+    <field type="CharField" name="email">kapu@meri.cc</field>
+    <field type="BooleanField" name="is_staff">False</field>
+    <field type="BooleanField" name="is_active">True</field>
+    <field type="DateTimeField" name="date_joined">2016-05-06T17:12:13.352343+00:00</field>
+    <field to="auth.group" rel="ManyToManyRel" name="groups"></field>
+    <field to="auth.permission" rel="ManyToManyRel" name="user_permissions"></field>
+  </object>
+  <object model="gameshop.Player" pk="1">
+    <field to="auth.user" name="user" rel="OneToOneRel">2</field>
+  </object>
+  <object model="gameshop.Player" pk="2">
+    <field to="auth.user" name="user" rel="OneToOneRel">58</field>
+  </object>
+  <object model="gameshop.Developer" pk="1">
+    <field to="auth.user" name="user" rel="OneToOneRel">1</field>
+  </object>
+  <object model="gameshop.Developer" pk="2">
+    <field to="auth.user" name="user" rel="OneToOneRel">59</field>
+  </object>
+  <object model="gameshop.Game" pk="1">
+    <field type="CharField" name="name">Dummy Game</field>
+    <field type="CharField" name="description">A dummy game for testing</field>
+    <field type="DecimalField" name="price">10.99</field>
+    <field type="URLField" name="url">http://localhost:8000/static/test_game/test_game.html</field>
+    <field type="CharField" name="category">1</field>
+    <field to="gameshop.Developer" name="developer" rel="OneToManyRel">1</field>
+    <field to="gameshop.Player" name="buyers" rel="ManyToManyRel"><object pk="1"></object></field>
+  </object>
+  <object model="gameshop.Game" pk="2">
+    <field type="CharField" name="name">Another Game</field>
+    <field type="CharField" name="description">An another dummy game for testing</field>
+    <field type="DecimalField" name="price">15.99</field>
+    <field type="URLField" name="url">http://www.example.com/game2.html</field>
+    <field type="CharField" name="category">3</field>
+    <field to="gameshop.Developer" name="developer" rel="OneToManyRel">1</field>
+    <field to="gameshop.Player" name="buyers" rel="ManyToManyRel"><object pk="2"></object></field>
+  </object>
+  <object model="gameshop.Game" pk="3">
+    <field type="CharField" name="name">Cool Game</field>
+    <field type="CharField" name="description">A pretty cool game</field>
+    <field type="DecimalField" name="price">4.99</field>
+    <field type="URLField" name="url">http://www.example.com/game3.html</field>
+    <field type="CharField" name="category">1</field>
+    <field to="gameshop.Developer" name="developer" rel="OneToManyRel">2</field>
+    <field to="gameshop.Player" name="buyers" rel="ManyToManyRel"><object pk="2"></object></field>
+  </object>
+  <object model="gameshop.Game" pk="4">
+    <field type="CharField" name="name">Popular Game</field>
+    <field type="CharField" name="description">Everyone wants this one</field>
+    <field type="DecimalField" name="price">11.56</field>
+    <field type="URLField" name="url">http://www.example.com/game4.html</field>
+    <field type="CharField" name="category">3</field>
+    <field to="gameshop.Developer" name="developer" rel="OneToManyRel">1</field>
+    <field to="gameshop.Player" name="buyers" rel="ManyToManyRel"><object pk="1"></object><object pk="2"></object></field>
+  </object>
+  <object model="gameshop.Game" pk="5">
+    <field type="CharField" name="name">Rock, paper, scissors!</field>
+    <field type="CharField" name="description">Rock, paper, scissors!</field>
+    <field type="DecimalField" name="price">10.99</field>
+    <field type="URLField" name="url">http://localhost:8000/static/oma_peli/oma_peli.html</field>
+    <field type="CharField" name="category">1</field>
+    <field to="gameshop.Developer" name="developer" rel="OneToManyRel">1</field>
+    <field to="gameshop.Player" name="buyers" rel="ManyToManyRel"></field>
+  </object>
+  <object model="gameshop.Payment" pk="1">
+    <field type="DateTimeField" name="timestamp">2015-10-10 11:12:55</field>
+    <field type="DecimalField" name="amount">10.99</field>
+    <field type="CharField" name="status">1</field>
+    <field to="gameshop.Game" name="game" rel="OneToManyRel">1</field>
+    <field to="gameshop.Player" name="player" rel="OneToManyRel">1</field>
+  </object>
+  <object model="gameshop.Payment" pk="2">
+    <field type="DateTimeField" name="timestamp">2015-10-11 11:12:55</field>
+    <field type="DecimalField" name="amount">12.99</field>
+    <field type="CharField" name="status">1</field>
+    <field to="gameshop.Game" name="game" rel="OneToManyRel">1</field>
+    <field to="gameshop.Player" name="player" rel="OneToManyRel"><None></None></field>
+  </object>
+  <object model="gameshop.Payment" pk="3">
+    <field type="DateTimeField" name="timestamp">2015-10-11 11:12:55</field>
+    <field type="DecimalField" name="amount">10.99</field>
+    <field type="CharField" name="status">1</field>
+    <field to="gameshop.Game" name="game" rel="OneToManyRel">3</field>
+    <field to="gameshop.Player" name="player" rel="OneToManyRel">2</field>
+  </object>
+  <object model="gameshop.Payment" pk="4">
+    <field type="DateTimeField" name="timestamp">2015-10-21 11:13:55</field>
+    <field type="DecimalField" name="amount">12.99</field>
+    <field type="CharField" name="status">1</field>
+    <field to="gameshop.Game" name="game" rel="OneToManyRel">4</field>
+    <field to="gameshop.Player" name="player" rel="OneToManyRel">2</field>
+  </object>
+  <object model="gameshop.Payment" pk="5">
+    <field type="DateTimeField" name="timestamp">2015-10-10 11:12:55</field>
+    <field type="DecimalField" name="amount">10.29</field>
+    <field type="CharField" name="status">1</field>
+    <field to="gameshop.Game" name="game" rel="OneToManyRel">1</field>
+    <field to="gameshop.Player" name="player" rel="OneToManyRel">2</field>
+  </object>
+  <object model="gameshop.Payment" pk="6">
+    <field type="DateTimeField" name="timestamp">2015-10-11 11:12:55</field>
+    <field type="DecimalField" name="amount">12.11</field>
+    <field type="CharField" name="status">1</field>
+    <field to="gameshop.Game" name="game" rel="OneToManyRel">4</field>
+    <field to="gameshop.Player" name="player" rel="OneToManyRel"><None></None></field>
+  </object>
+  <object model="gameshop.Payment" pk="7">
+    <field type="DateTimeField" name="timestamp">2015-10-10 11:12:55</field>
+    <field type="DecimalField" name="amount">5.29</field>
+    <field type="CharField" name="status">1</field>
+    <field to="gameshop.Game" name="game" rel="OneToManyRel">3</field>
+    <field to="gameshop.Player" name="player" rel="OneToManyRel"><None></None></field>
+  </object>
+  <object model="gameshop.Payment" pk="8">
+    <field type="DateTimeField" name="timestamp">2015-10-11 11:12:55</field>
+    <field type="DecimalField" name="amount">11.11</field>
+    <field type="CharField" name="status">1</field>
+    <field to="gameshop.Game" name="game" rel="OneToManyRel">4</field>
+    <field to="gameshop.Player" name="player" rel="OneToManyRel"><None></None></field>
+  </object>
+  <object model="gameshop.Score" pk="1">
+    <field type="FloatField" name="score">1000.0</field>
+    <field to="gameshop.Game" name="game" rel="OneToManyRel">1</field>
+    <field to="gameshop.Player" name="player" rel="OneToManyRel">1</field>
+  </object>
+  <object model="gameshop.Score" pk="2">
+    <field type="FloatField" name="score">999.0</field>
+    <field to="gameshop.Game" name="game" rel="OneToManyRel">1</field>
+    <field to="gameshop.Player" name="player" rel="OneToManyRel">1</field>
+  </object>
+  <object model="gameshop.Score" pk="3">
+    <field type="FloatField" name="score">1034.0</field>
+    <field to="gameshop.Game" name="game" rel="OneToManyRel">4</field>
+    <field to="gameshop.Player" name="player" rel="OneToManyRel">2</field>
+  </object>
+  <object model="gameshop.Score" pk="4">
+    <field type="FloatField" name="score">993.0</field>
+    <field to="gameshop.Game" name="game" rel="OneToManyRel">4</field>
+    <field to="gameshop.Player" name="player" rel="OneToManyRel">2</field>
+  </object>
+  <object model="gameshop.Score" pk="5">
+    <field type="FloatField" name="score">229.0</field>
+    <field to="gameshop.Game" name="game" rel="OneToManyRel">1</field>
+    <field to="gameshop.Player" name="player" rel="OneToManyRel">1</field>
+  </object>
+  <object model="gameshop.Score" pk="6">
+    <field type="FloatField" name="score">1300.0</field>
+    <field to="gameshop.Game" name="game" rel="OneToManyRel">4</field>
+    <field to="gameshop.Player" name="player" rel="OneToManyRel">2</field>
+  </object>
+  <object model="gameshop.Score" pk="7">
+    <field type="FloatField" name="score">234.0</field>
+    <field to="gameshop.Game" name="game" rel="OneToManyRel">4</field>
+    <field to="gameshop.Player" name="player" rel="OneToManyRel">1</field>
+  </object>
+</django-objects>

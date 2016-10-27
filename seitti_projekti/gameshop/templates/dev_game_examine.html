@@ -1,0 +1,25 @@
+{% extends "dev_base.html" %}
+{% load staticfiles %}
+
+{% block head_elements %}
+{{ block.super }}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+{% endblock %}
+
+{% block header %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+<h3> {{ game.name }} </h3>
+<p>
+  {{ game.description }}
+</p>
+<p>
+  <h4>Hinta: {{ game.price }}</h4>
+</p>
+<p>
+  <h4>Amount of buyers: {{ game.buyerAmount }}</h4>
+</p>
+{% endblock %}

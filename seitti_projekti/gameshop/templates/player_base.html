@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Riistokauppa{% endblock %}</title>
+    {% block head_elements %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% endblock %}
+  </head>
+
+  <body>
+  {% block header %}
+  <div class="header">
+		<h1>Tervetuloa Riistokauppa.comiin, {{ user.get_short_name}}!</h1>
+  </div>
+  {% endblock %}
+
+  {% block navigation_bar %}
+  <div id="navigation_bar">
+
+    <a class="navigation_button" href="{% url "index" %}">Etusivu</a>
+    <a class="navigation_button" href="{% url "search" %}">Hae pelejä</a>
+    <a class="navigation_button" href="{% url "playerProfile" %}">Omat tiedot</a>
+    <a class="navigation_button" href="{% url "logout" %}">Kirjaudu ulos</a>
+
+  </div>
+  {% endblock %}
+
+  {% block content %}
+
+  {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form id="register_form" action="/register" method="post">
+      {% csrf_token %}
+	  <div id ="list">
+      <table>
+        {% for field in form %}
+          <tr>
+            <th>
+              {{ field.label_tag }}
+            </th>
+            <td>
+              {{ field }}
+            </td>
+            <td>
+              {{ field.errors.as_text }}
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+		</div>
+      <div class="">
+        <input id ="button" type="submit" name="name" value="Rekisteröidy">
+      </div>
+      {{ form.non_field_errors }}
+    </form>
+  </body>
+</html>

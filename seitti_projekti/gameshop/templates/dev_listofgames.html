@@ -1,0 +1,50 @@
+{% extends "dev_base.html" %}
+{% load staticfiles %}
+
+{% block head_elements %}
+{{ block.super }}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+{% endblock %}
+
+{% block header %}
+<div class="header">
+    <h1>{{ user.get_username}}:n pelit</h1>
+</div>
+{% endblock %}
+
+{% block navigation_bar %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+<div class="col-9">
+    <p id="search_results">
+    <table id="result_table">
+    {% if games %}
+        <tr>
+            <td>Nimi</td>
+            <td>Hinta</td>
+        </tr>
+        {% for game in games %}
+            <tr class="search_result_row" href="game/{{ game.pk }}">
+                <td> {{ game.name }} </td>
+                <td> {{ game.price }} </td>
+                <td><a class="navigation_button" href="{% url "dev_game" game.pk %}">Tiedot</a></td>
+                <td><a class="navigation_button" href="{% url "editGame" game.pk %}">Muokkaa</a></td>
+            </tr>
+        {% endfor %}
+    {% else %}
+        <tr>
+            <p>Et ole lisännyt pelejä.</p>
+        </tr>
+    {% endif %}
+    </table>
+    </p>
+    <a class="navigation_button" href="{% url 'add' %}">Lisää uusi peli</a>
+</div>
+
+{% endblock %}
+
+
+

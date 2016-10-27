@@ -1,0 +1,58 @@
+{% extends "player_base.html" %}
+{% load staticfiles %}
+
+{% block head_elements %}
+{{ block.super }}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+{% endblock %}
+
+{% block header %}
+<div class="header">
+  <h1>Muokkaa tietoja</h1>
+</div>
+{% endblock %}
+
+{% block navigation_bar %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h3>Tilisi tiedot</h3>
+<form class="modify_player_form" action="{% url 'playerModifyInfo' %}" method="post">
+  {% csrf_token %}
+   <div id ="list">
+  <table>
+    {% for field in form %}
+      <tr>
+        <th>
+          {{ field.label_tag }}
+        </th>
+        <td>
+          {{ field }}
+        </td>
+        <td>
+		<div id="error">
+          {{ field.errors.as_text }}
+		</div>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+  </div>
+  <div id="error">
+  {{ form.non_field_errors }}
+  </div>
+  <input id="button" type="submit" name="modify" value="Muuta tietoja">
+</form>
+
+{% if messages %}
+<div id="ok">
+<div class="messages">
+
+  {% for message in messages %}
+    {{ message }}
+  {% endfor %}
+</div>
+</div>
+{% endif %}
+{% endblock %}

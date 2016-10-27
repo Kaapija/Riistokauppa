@@ -1,0 +1,53 @@
+{% extends "dev_base.html" %}
+{% load staticfiles %}
+
+{% block head_elements %}
+{{ block.super }}
+{% endblock %}
+
+{% block header %}
+<div class="header">
+    <h1>Editoi peliäsi</h1>
+</div>
+{% endblock %}
+
+{% block navigation_bar %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+<form id="game_add_form" action="" method="post">
+  {% csrf_token %}
+  <div id="fields">
+  <table>
+    {% for field in form %}
+      <tr>
+        <th>
+          {{ field.label_tag }}
+        </th>
+        <td>
+          {{ field }}
+        </td>
+        <td>
+		<div id="error">
+          {{ field.errors.as_text }}
+		</div>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+
+  </div>
+    <input id="button" type="submit" name="edit" value="Tallenna muutokset">
+</form>
+{% if messages %}
+<div id="ok">
+<div class="messages">
+
+  {% for message in messages %}
+    {{ message }}
+  {% endfor %}
+</div>
+</div>
+{% endif %}
+{% endblock %}

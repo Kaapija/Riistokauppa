@@ -1,0 +1,36 @@
+{% extends "player_base.html" %}
+{% load staticfiles %}
+
+{% block head_elements %}
+{{ block.super }}
+{% endblock %}
+
+{% block header %}
+{{ block.super }}
+{% endblock %}
+
+{% block navigation_bar %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h2>Omat pelit</h2>
+<table id="my_games">
+  {% for game in ownGames %}
+    <tr>
+      <td> {{ game.name }} </td>
+      <td> <a class="navigation_button" href="{% url 'game' game.pk %}">Pelaa</a> </td>
+    </tr>
+  {% endfor %}
+</table>
+<h2>Ostetuimmat pelit</h2>
+<table>
+  {% for game in popularGames %}
+    <tr>
+      <td> {{ game.name }} </td>
+      <td> <a class="navigation_button" href="{% url "confirmPayment" game.pk %}">Osta</a> </td>
+      <td> <a class="navigation_button" href="{% url "game" game.pk %}">Tiedot</a></td>
+    </tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,18 @@
+<form id="user_type_form" action="/facebook_user_finalize" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="username" value="{{ username }}"/>
+    <input type="hidden" name="facebookid" value="{{ facebookid }}">
+    <input type="hidden" name="firstName" value="{{ firstName }}"/>
+    <input type="hidden" name="lastName" value="{{ lastName }}">
+    <div class="user_type_form">
+      <label for="id_userType_0">Valitse tilin tyyppi:</label>
+      <label for="id_userType_0">
+      <input checked="checked" id="id_userType_0" name="userType" type="radio" value="player"/> Pelaaja</label>
+      <label for="id_userType_1">
+      <input id="id_userType_1" name="userType" type="radio" value="developer"/> Kehittäjä</label>
+    </div>
+  <div class="">
+    <input type="submit" name="name" value="Choose">
+  </div>
+
+</form>

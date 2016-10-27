@@ -1,0 +1,136 @@
+/* Use this css-file by adding these lines to html <head> section:
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	Adds just responsivenes to the page [22.3.2016]
+	In order to add style to buttons, button has to have input id = "button".
+*/
+/* Default == desktop? */
+body {
+    background-color: rgb(194, 194, 194);
+    font-family: Verdana, sans-serif;;
+}
+
+*{
+    box-sizing: border-box;
+}
+.header {
+    background-color: black;
+    color: #ffffff;
+    padding: 15px;
+    font-family: "Times New Roman", sans-serif;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 10px;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+/* Mobile phones */
+@media screen and (max-width: 767px) {
+    body {
+        background-color:lightblue;
+    }
+}
+/* Tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px){
+	body {
+        background-color:#ff66cc;
+    }
+}
+
+#button{
+  background-color: white;
+  border-style: solid;
+  border-width: 3px;
+  border-color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+#button:hover {
+  border-color: rgb(197, 157, 201);
+}
+
+#list{
+	text-align: left;
+}
+.errorlist{
+}
+
+#result_table {
+  border-collapse: collapse;
+}
+
+#search_form {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.search_buttons {
+  padding: 10px;
+}
+
+.search_result_row {
+  border-style: solid;
+  border-width: 3px;
+}
+
+.search_result_row td {
+  padding: 5px;
+  margin: 3px;
+}
+
+.search_result_row:hover {
+  background-color: rgb(197, 157, 201);
+}
+
+.score_div {
+  float: left;
+  padding: 10px;
+}
+
+#navigation_bar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+td {
+  padding: 5px;
+}
+
+a.navigation_button {
+  background-color: white;
+  border-style: solid;
+  border-width: 3px;
+  border-color: white;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: sans-serif;
+  color: black;
+  padding: 2px;
+}
+
+a.navigation_button:hover {
+  border-color: rgb(197, 157, 201);
+}
+
+#error{
+	color: red;
+}
+
+#ok{
+	color: #006600;
+}

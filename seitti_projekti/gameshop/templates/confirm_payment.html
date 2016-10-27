@@ -1,0 +1,25 @@
+{% extends "player_base.html" %}
+{% load staticfiles %}
+
+{% block head_elements %}
+{{ block.super }}
+{% endblock %}
+
+{% block header %}
+{{ block.super }}
+{% endblock %}
+
+{% block navigation_bar %}
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+<div>
+  Olet ostamassa peliä {{ game.name }}. <br>
+  Siirry maksupalveluun tai jatka selailus
+</div>
+<form action="https://simplepayments.herokuapp.com/pay/" method="post">
+  {{ form }}
+  <input id="button" type="submit" value="Maksupalveluun"/>
+</form>
+{% endblock %}

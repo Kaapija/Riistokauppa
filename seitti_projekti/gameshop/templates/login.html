@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login_style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="{% static 'js/facebook_login.js' %}"></script>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Login</title>
+  </head>
+  <body>
+      <form id="login_form" action="/login" method="post">
+        {% csrf_token %}
+        <label for="{{ form.username.id_for_label }}">Käyttäjätunnus</label>
+        {{ form.username }}
+        <label for="{{ form.password.id_for_label }}">Salasana</label>
+        {{ form.password }}
+        <div>
+          <input class="form_submit" type="submit" name="submit" value="Kirjaudu">
+        </div>
+        <div class="errorlist">
+          <p> {{ form.username.errors.as_text }} </p>
+          <p> {{ form.password.errors.as_text }} </p>
+          <p> {{ form.non_field_errors.as_text }} </p>
+        </div>
+      </form>
+      <form action="/register" method="get">
+        <input class="form_submit" type="submit" value="Rekisteröidy">
+      </form>
+
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+  </body>
+</html>
